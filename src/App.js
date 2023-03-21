@@ -1,27 +1,28 @@
 import './App.css';
+import User from './components/Users';
 import Header from './components/Header';
-const name = "Ezgi"
-const surname = "SARI"
-const isLoggedIn = false ;
 
+const friends =[{id:1, name: "Mehmet"},{id:2, name: "Aslı"},{id:3,name: "Ahmet"},{id:4,name: "Deniz"},{id:5,name: "Cansu"}]
 
 function App() {
   // return React.createElement("div",null,"Hello");
 
   return (
-    <div className="App">
-      <h1>Hello React</h1>
-      <Header />
-      <h1>{name}</h1>
-      <h1>{`Benim adım ${name} soyadım ${surname}`}</h1>
+    <>
+      <User 
+      //name="Ezgi" 
+      surname="SARI" 
+      isLoggedIn={true} 
+      age={"25"} 
+      friends={friends}
+      address ={{
+        title: "Atasehir/istanbul",
+        zip: 34755
+      }}
+      />
 
-      {/* render with cond. */}
-      <h1>{isLoggedIn && `Benim adım ${name} soyadım ${surname}`}</h1>
-      <h1>{!isLoggedIn && "Giriş Yapmadınız!"}</h1>
-
-      {/* Short if */}
-      <h1>{isLoggedIn ? `Benim adım ${name} soyadım ${surname}` :"Giriş Yapmadınız!" }</h1>
-    </div>
+    
+    </>
   );
 }
 
