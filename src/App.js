@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+const name = "Ezgi"
+const surname = "SARI"
+const isLoggedIn = false ;
+
 
 function App() {
+  // return React.createElement("div",null,"Hello");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello React</h1>
+      <Header />
+      <h1>{name}</h1>
+      <h1>{`Benim adım ${name} soyadım ${surname}`}</h1>
+
+      {/* render with cond. */}
+      <h1>{isLoggedIn && `Benim adım ${name} soyadım ${surname}`}</h1>
+      <h1>{!isLoggedIn && "Giriş Yapmadınız!"}</h1>
+
+      {/* Short if */}
+      <h1>{isLoggedIn ? `Benim adım ${name} soyadım ${surname}` :"Giriş Yapmadınız!" }</h1>
     </div>
   );
 }
